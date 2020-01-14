@@ -1,0 +1,63 @@
+<a href="#" class="uk-button uk-button-link uk-icon tm-back"><span uk-icon="icon: chevron-left; "></span>Back</a>
+
+<h2 class="uk-h3 uk-margin-small-top">New Article</h2>
+<ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
+    <li><a href="#articles">Articles</a></li>
+    <li class="uk-disabled"><a href="#">New Article</a></li>
+</ul>
+<form class="uk-form-stacked">
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+				<div class="uk-margins">
+					<label class="uk-form-label" for="form-stacked-text">Code</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="form-stacked-text" type="text" placeholder="Code...">
+					</div>
+				</div>
+		</div>
+		<div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="form-stacked-select">Name</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="" type="text" placeholder="Name...">
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Duration (in weeks)</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="number" placeholder="Caption...">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margin">
+		        <label class="uk-form-label" for="dates-select">Dates</label>
+		        <div class="uk-form-controls">
+		            <select class="uk-select" id="dates-select" multiple="multiple"></select>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<div class="uk-margin-large-bottom"><br /></div>
+
+    <div class="footer-buttons">
+		<div class="footer-padding">
+			<button type="submit" onclick="alert($('#dates-select').val());" class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span uk-icon="icon: check; "></span> Publish</button>
+		</div>
+	</div>
+</form>
+
+<script>
+	$(document).ready(function(){
+		$('#dates-select').select2({
+			tags: true,
+		});
+	});
+</script>

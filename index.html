@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css">
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+	<!--  -->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<!--  -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.6.2/ckeditor.js"></script> -->
+	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> -->
+	<!-- <script>tinymce.init({selector:'textarea'});</script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>Immense Management Institute</title>
+	<style>
+	</style>
+</head>
+<body>
+	<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container;">
+		<nav style="border-bottom: 1px solid #e0e0e0;" class="uk-navbar-container uk-display-block bg-white" uk-navbar="dropbar: true; delay-hide: 500;">
+			<div class="uk-container uk-container-expand">
+		    	<div class="uk-grid uk-margin-remove-left" uk-navbar>
+		        	<ul id="logo" class="uk-navbar-nav">
+		            	<li class="uk-active"><a href="#home">IMI</a></li>
+		            </ul>
+		        	<ul class="uk-navbar-nav uk-navbar-right uk-flex-right" style="width:100%;">
+		        		<li class="uk-active">
+		        			<a href="#consultancy">Consultancy</a>
+		        		</li>
+		        		<li class="uk-active">
+		        			<a href="#">Courses</a>
+		        			<div class="uk-navbar-dropdown uk-navbar-dropdown-width-3" uk-drop="boundary: nav; boundary-align: true; pos: bottom-justify;">
+			                    <div class="uk-navbar-dropdown-grid uk-child-width-1-3 uk-navbar-right uk-flex-top" uk-grid>
+			                        <div>
+			                            <ul class="uk-nav uk-navbar-dropdown-nav">
+			                                <a href="#programmes"><li class="uk-nav-header">Programmes</li></a>
+			                                <li><a href="#programmes/management">Management Development</a></li>
+			                                <li><a href="#programmes/hr">Human Resources Development</a></li>
+			                                <li><a href="#programmes/is">Information Systems Management</a></li>
+			                                <li><a href="#programmes/ev">Environmental & Agricultural</a></li>
+			                                <li><a href="#programmes/finance">Public Finance</a></li>
+			                                <li><a href="#programmes/health">Health Management</a></li>
+			                            </ul>
+			                        </div>
+			                        <div>
+			                            <ul class="uk-nav uk-navbar-dropdown-nav">
+			                                <a href="#about-programmes"><li class="uk-nav-header">About Programmes</li></a>
+			                                <li>
+			                                	<a href="#about-programmes/courses-types">Types of Courses</a>
+			                                	<ul class="uk-margin-small-left uk-nav uk-navbar-dropdown-nav">
+							                        <li><a href="#about-programmes/in-house">In-House</a></li>
+							                        <li><a href="#about-programmes/public">Public</a></li>
+							                    </ul>
+			                                </li>
+			                                <li><a href="#about-programmes/venue">Venue</a></li>
+			                                <li><a href="#about-programmes/applications">Applications</a></li>
+			                            </ul>
+			                        </div>
+			                        <div>
+			                            <ul class="uk-nav uk-navbar-dropdown-nav">
+			                                <a href="#info"><li class="uk-nav-header">Relevant Information</li></a>
+			                                <li><a href="#info/tuition">Tuition Fees</a></li>
+			                                <li><a href="#info/accommodation">Accommodation</a></li>
+			                                <li><a href="#info/travel-visas-pass">Travel, Visas & Student's Pass</a></li>
+			                                <li><a href="#info/transport">Transport</a></li>
+			                                <li><a href="#info/living-expenses">Living Expenses</a></li>
+			                                <li><a href="#info/weather">Weather</a></li>
+			                            </ul>
+			                        </div>
+			                    </div>
+			                </div>
+		        		</li>
+			            <li class="uk-active"><button id="fixed-button" type="button" style="min-height:auto;" class="uk-button uk-button-primary">Enroll Now</button></li>
+		            </ul>
+	            </div>
+		    </div>
+	    </nav>
+	</div> <!-- .cd-main-header -->
+
+	<main class="cd-main-content">
+		<div class="content-wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper uk-margin-top">
+
+			<div class="uk-container uk-container-medium uk-width-1-1 uk-padding-remove-horizontal" id="content">
+
+			</div>
+        </div>
+        <!-- /#page-content-wrapper -->
+		</div> <!-- .content-wrapper -->
+	</main> <!-- .cd-main-content -->
+
+	<div class="uk-child-width-1-4@s uk-padding-small uk-padding-remove-horizontal" uk-grid>
+		<div class="uk-panel">
+			<span class="uk-icon-button" uk-icon="icon: location"></span>
+			<small class="uk-display-inline-block">Swaziland</small>,
+			<small class="uk-display-inline-block">Tanzania</small>
+		</div>
+		<div class="uk-panel">
+			<span class="uk-icon-button" uk-icon="icon: ">&copy;</span>
+			<small class="uk-display-inline-block">2019 imisd. All Rights Reserved</small>
+		</div>
+		<div class="uk-panel"></div>
+		<div class="uk-panel">
+			<ul class="uk-height-1-1 uk-iconnav uk-flex-around uk-flex-middle">
+				<li><a href="#" uk-icon="icon: facebook"></a></li>
+				<li><a href="#" uk-icon="icon: twitter"></a></li>
+				<li><a href="#" uk-icon="icon: dribbble"></a></li>
+				<li><a href="#" uk-icon="icon: instagram"></a></li>
+			</ul>
+		</div>
+	</div>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script>
+	$(document).ready(function() {
+	});
+</script>
+<script>
+function get_content(tpl, div) {
+	$.get(tpl, function(result){
+	    $result = $(result);
+
+	    $( div ).html( result );
+	    $result.find('script').appendTo(div);
+	}, 'html');
+}
+crossroads.addRoute('/{section}/{subsection}', function(section, subsection){  
+  window.target = subsection;
+  get_content('templates/'+section+'.html', '#content');
+  removeHash();
+  toSubsection(subsection);
+});
+crossroads.addRoute('/{section}', function(section){  
+  window.target = false;
+  get_content('templates/'+section+'.html', '#content');
+  removeHash();
+});
+crossroads.addRoute('/', function(id){  
+  window.target = false;
+  get_content('templates/home.html', '#content');
+  removeHash();
+});
+
+//setup hasher
+function parseHash(newHash, oldHash){
+  crossroads.parse(newHash);
+}
+hasher.initialized.add(parseHash); //parse initial hash
+hasher.changed.add(parseHash); //parse hash changes
+hasher.init(); //start listening for history change
+
+function removeHash () { 
+    var scrollV, scrollH, loc = window.location;
+    if ("pushState" in history) {
+        history.pushState("", document.title, loc.pathname + loc.search);
+    } else {
+        // Prevent scrolling by storing the page's current scroll offset
+        scrollV = document.body.scrollTop;
+        scrollH = document.body.scrollLeft;
+
+        loc.hash = "";
+
+        // Restore the scroll offset, should be flicker free
+        document.body.scrollTop = scrollV;
+        document.body.scrollLeft = scrollH;
+    }
+}
+
+function toSubsection(subsection) {
+	if (subsection) {
+		UIkit.scroll('#content', {offset: 50}).scrollTo('#' + subsection);
+	}
+	return false;
+}
+const kebabCase = str => str.match(/[A-Z]{2,}(?=[A-Z][a-z0-9]*|\b)|[A-Z]?[a-z0-9]*|[A-Z]|[0-9]+/g)
+  .filter(Boolean)
+  .map(x => x.toLowerCase())
+  .join('-');
+</script>
+
+</body>
+</html>
