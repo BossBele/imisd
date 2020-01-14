@@ -1,2 +1,2 @@
 # imisd
-Website for the Institute of Management
+Website for the Immense Management Institute
