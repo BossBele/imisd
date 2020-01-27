@@ -12,7 +12,7 @@ function addNewCourse() {
             if (result[0].message == "success") {
                 alert('Course added');
                 $('#new_course').trigger("reset");
-            }else {
+            } else {
                 alert('Course exists');
                 $('#update_course').trigger("reset");
             }
@@ -42,6 +42,27 @@ function updateCourse() {
     });
 }
 
+function deleteCourse(course_id) {
+    var data = {delete_course: "yes", course_id: course_id};
+
+    $.ajax({
+        url: course_update_url,
+        type: "post",
+        dataType: "json",
+        data: data,
+        success: function (result) {
+            if (result[0].message == "success") {
+                alert('Course deleted');
+                location.reload();
+            } else {
+                alert('Course in use');
+                retrieveCourse();
+            }
+
+        }
+    });
+}
+
 function retrieveCourse() {
     // var retrieve_course = "yes";
     var data = {retrieve: "yes", edit: "1"};
@@ -51,10 +72,10 @@ function retrieveCourse() {
         dataType: "json",
         data: data,
         success: function (result) {
-            try{
+            try {
                 document.getElementById('edit_form').style.display = 'block';
                 document.getElementById('update_form').style.display = 'none';
-            }catch (e) {
+            } catch (e) {
                 console.log(e);
             }
             $('#table_courses tbody').empty();
@@ -65,7 +86,7 @@ function retrieveCourse() {
                 row.append('<td>' + obj.name + '</td>');
                 row.append('<td>' + obj.duration + '</td>');
                 row.append('<td>' + +'</td>');
-                row.append('<td><ul class="uk-iconnav"><li><a id="update_btn" onclick="updateCourses(' + index + ')" uk-icon="icon: file-edit"></a></li><li><a href="#" uk-icon="icon: trash"></a></li> </ul></td>');
+                row.append('<td><ul class="uk-iconnav"><li><a id="update_btn" onclick="updateCourses(' + index + ')" uk-icon="icon: file-edit"></a></li><li><a onclick="deleteCourses(' + index + ')" uk-icon="icon: trash"></a></li> </ul></td>');
                 $('#table_courses').append(row);
             });
         }
@@ -86,5 +107,13 @@ function updateCourses(index) {
         document.getElementById('name_edit').value = data.name;
         document.getElementById('duration_edit').value = data.duration;
     }
+}
+
+function deleteCourses(index) {
+    if (all_course != []) {
+        var data = all_course[index];
+        deleteCourse(data.id);
+    }
+
 }
 

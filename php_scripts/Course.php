@@ -41,6 +41,24 @@ class Course
         echo json_encode($response);
     }
 
+    public function deleteCourse($course_id)
+    {
+        $connection = new Connection();
+        $sql = "delete from course where id='" . $course_id . "'";
+        $result = mysqli_query($connection->connect(), $sql);
+        $response = array();
+        if ($result) {
+            array_push($response, array(
+                'message' => "success"
+            ));
+        } else {
+            array_push($response, array(
+                'message' => "failed"
+            ));
+        }
+        echo json_encode($response);
+    }
+
     public function retrieveCourse()
     {
         $connection = new Connection();
