@@ -188,9 +188,15 @@
         $("#selected-articles-status").text(text);
     }
 
+    var course_update_url = '../../../../php_scripts/requestHandler.php';
 
+    $(document).ready(function () {
+        retrieveCourse();
+    });
+
+    $('#update_course').on('submit', function (e) {
+        e.preventDefault();
+        updateCourse();
+    });
 
 </script>
-
-
-<!--<script src="../../../../js/course.js"></script>-->

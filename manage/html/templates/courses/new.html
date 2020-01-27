@@ -67,8 +67,13 @@
         });
     });
 
-    let course_url = '../../../../php_scripts/course.php';
+    var course_url = '../../../../php_scripts/requestHandler.php';
+
+    $('#new_course').on('submit', function (e) {
+        e.preventDefault();
+        addNewCourse();
+    });
 
 </script>
 
-<script src="../../../../js/course.js"></script>
+<!--<script src="../../../../js/course.js"></script>-->

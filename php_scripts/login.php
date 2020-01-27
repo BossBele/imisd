@@ -1,7 +1,8 @@
 <?php
-include 'connection.php';
+include 'Connection.php';
 
 
+$connection = new Connection();
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -10,7 +11,7 @@ if (isset($_POST['submit'])) {
     if (isset($passwords)) {
 
         $sql = "SELECT * FROM user WHERE name='" . $username . "'";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($connection->connect(), $sql);
 
         if ($result->num_rows === 1) {
             $row = $result->fetch_array(MYSQLI_ASSOC);

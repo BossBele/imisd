@@ -12,6 +12,9 @@ function addNewCourse() {
             if (result[0].message == "success") {
                 alert('Course added');
                 $('#new_course').trigger("reset");
+            }else {
+                alert('Course exists');
+                $('#update_course').trigger("reset");
             }
 
         }
@@ -29,33 +32,31 @@ function updateCourse() {
         success: function (result) {
             if (result[0].message == "success") {
                 alert('Course added');
-                $('#new_course').trigger("reset");
+                $('#update_course').trigger("reset");
+            } else {
+                alert('Course exists');
+                $('#update_course').trigger("reset");
             }
 
         }
     });
 }
 
-$('#new_course').on('submit', function (e) {
-    e.preventDefault();
-    addNewCourse();
-});
-
-$('#update_course').on('submit', function (e) {
-    e.preventDefault();
-    updateCourse();
-});
-
 function retrieveCourse() {
-    var retrieve_course = "yes";
+    // var retrieve_course = "yes";
+    var data = {retrieve: "yes", edit: "1"};
     $.ajax({
         url: course_retrieve_url,
         type: "get",
         dataType: "json",
-        data: retrieve_course,
+        data: data,
         success: function (result) {
-            document.getElementById('edit_form').style.display = 'block';
-            document.getElementById('update_form').style.display = 'none';
+            try{
+                document.getElementById('edit_form').style.display = 'block';
+                document.getElementById('update_form').style.display = 'none';
+            }catch (e) {
+                console.log(e);
+            }
             $('#table_courses tbody').empty();
             all_course = result;
             $.each(result, function (index, obj) {
@@ -64,7 +65,7 @@ function retrieveCourse() {
                 row.append('<td>' + obj.name + '</td>');
                 row.append('<td>' + obj.duration + '</td>');
                 row.append('<td>' + +'</td>');
-                row.append('<td><ul class="uk-iconnav"><li><a id="update_btn" onclick="updateCourse(' + index + ')" uk-icon="icon: file-edit"></a></li><li><a href="#" uk-icon="icon: trash"></a></li> </ul></td>');
+                row.append('<td><ul class="uk-iconnav"><li><a id="update_btn" onclick="updateCourses(' + index + ')" uk-icon="icon: file-edit"></a></li><li><a href="#" uk-icon="icon: trash"></a></li> </ul></td>');
                 $('#table_courses').append(row);
             });
         }
@@ -75,7 +76,7 @@ $('#edit_course').on('click', function () {
     retrieveCourse();
 });
 
-function updateCourse(index) {
+function updateCourses(index) {
     if (all_course != []) {
         document.getElementById('edit_form').style.display = 'none';
         document.getElementById('update_form').style.display = 'block';
