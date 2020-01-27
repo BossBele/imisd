@@ -42,13 +42,13 @@
         </div>
         <div class="uk-margin-top">
         	<div class="uk-container uk-container-small">
-			<form class="uk-form-stacked">
+			<form class="uk-form-stacked" action="../php_scripts/login.php" method="post">
 				<div class="uk-child-width-expand@s" uk-grid>
 					<div>
 						<div class="uk-margin">
 							<label class="uk-form-label" for="username">Username</label>
 							<div class="uk-form-controls">
-								<input class="uk-input" id="username" type="text" placeholder="Username...">
+								<input class="uk-input" id="username" name="username" type="text" placeholder="Username...">
 							</div>
 						</div>
 					</div>
@@ -58,7 +58,7 @@
 						<div class="uk-margin">
 							<label class="uk-form-label" for="email">Email</label>
 							<div class="uk-form-controls">
-								<input class="uk-input" id="email" type="email" placeholder="Email...">
+								<input class="uk-input" id="email" name="email" type="email" placeholder="Email...">
 							</div>
 						</div>
 					</div>
@@ -68,13 +68,13 @@
 							<div class="uk-margins">
 								<label class="uk-form-label" for="password">Password</label>
 								<div class="uk-form-controls">
-									<input class="uk-input" id="fpassword" type="password" placeholder="Password...">
+									<input class="uk-input" name="password" id="fpassword" type="password" placeholder="Password...">
 								</div>
 							</div>
 					</div>
 				</div>
 				<br />
-				<button type="submit" class="uk-button uk-button-primary uk-width-1-1"> Login</button>
+				<button type="submit" value="submit" name="submit" class="uk-button uk-button-primary uk-width-1-1"> Login</button>
 			</form>
 
 			</div>
@@ -83,4 +83,5 @@
 		</div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
 </body>
+
 </html>

@@ -1,169 +1,196 @@
 <a href="#" class="uk-button uk-button-link uk-icon tm-back"><span uk-icon="icon: chevron-left; "></span>Back</a>
 
-	<div class="uk-child-width-expand@s uk-margin-small-top uk-flex-top" uk-grid>
-<div>
+<!--course list table-->
+<div id="edit_form">
+    <div class="uk-child-width-expand@s uk-margin-small-top uk-flex-top" uk-grid>
+        <div>
 
-<div class="uk-flex uk-flex-wrap ">
-    <div class="uk-width-1-1">
-		<h2 class="uk-h3">Manage Articles</h2>
-	</div>    
-	<div class="uk-width-1-1">
-		<ul class="uk-breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li class="uk-disabled"><a href="#">Articles</a></li>
-		</ul>
-	</div>
-</div>
-</div>
-<br />
-<br />
-<div>
+            <div class="uk-flex uk-flex-wrap ">
+                <div class="uk-width-1-1">
+                    <h2 class="uk-h3">Manage Articles</h2>
+                </div>
+                <div class="uk-width-1-1">
+                    <ul class="uk-breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="uk-disabled"><a href="#">Articles</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div>
 
-</div>
-</div>
-
-
-	<div class="uk-child-width-expand@s uk-margin-small-top uk-flex-middle" uk-grid>
-
-
-    <div class="uk-width-expand">
-	<div class="uk-child-width-expand@s" uk-grid>
-			<div class="uk-button-group uk-width-auto">
-				
-
-<div class="uk-inline">
-    <button class="uk-button uk-button-default" type="button"><span uk-icon="icon: list"></span>&ensp;<span id="selected-articles-status">All</span></button>
-    <div uk-dropdown="mode: click">
-        <ul class="uk-nav uk-dropdown-nav">
-				<li class="uk-active" onclick="selectStatus(this)"><a href="#">All</a></li>
-				<li onclick="selectStatus(this)"><a href="#">Published</a></li>
-				<li onclick="selectStatus(this)"><a href="#">Draft</a></li>
-				<li onclick="selectStatus(this)"><a href="#">Trash</a></li>
-        </ul>
+        </div>
     </div>
-</div>
 
-			</div>
-			
-			<div class="uk-width-expand" >
-				<form class="uk-search uk-search-default uk-width-5-6" >
-					<span uk-search-icon></span>
-					<input class="uk-search-input uk-flex-wrap-stretch" id="search" type="search" placeholder="Search...">
-				</form>
-			</div>
-			</div>
 
-	</div>
+    <div class="uk-child-width-expand@s uk-margin-small-top uk-flex-middle" uk-grid>
 
-    <div class="uk-width-auto">
-		<a href="#articles/new">
-            <button class="uk-button uk-button-primary uk-icon uk-align-right"><span uk-icon="icon: plus; "></span> New article</button>
-        </a>
-	</div>
 
-	
-</div>
-<hr class="uk-divider-icon">
+        <div class="uk-width-expand">
+            <div class="uk-child-width-expand@s" uk-grid>
+                <div class="uk-button-group uk-width-auto">
 
-<table class="uk-table uk-table-striped">
-    <thead>
+
+                    <div class="uk-inline">
+                        <button class="uk-button uk-button-default" type="button"><span
+                                uk-icon="icon: list"></span>&ensp;<span id="selected-articles-status">All</span>
+                        </button>
+                        <div uk-dropdown="mode: click">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li class="uk-active" onclick="selectStatus(this)"><a href="#">All</a></li>
+                                <li onclick="selectStatus(this)"><a href="#">Published</a></li>
+                                <li onclick="selectStatus(this)"><a href="#">Draft</a></li>
+                                <li onclick="selectStatus(this)"><a href="#">Trash</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="uk-width-expand">
+                    <form class="uk-search uk-search-default uk-width-5-6">
+
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input uk-flex-wrap-stretch" id="search" type="search"
+                               placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="uk-width-auto">
+            <a href="#articles/new">
+                <button class="uk-button uk-button-primary uk-icon uk-align-right"><span uk-icon="icon: plus; "></span>
+                    New
+                    article
+                </button>
+            </a>
+        </div>
+
+
+    </div>
+    <hr class="uk-divider-icon">
+
+    <table id="table_courses" class="uk-table uk-table-striped">
+        <thead>
         <tr>
-            <th>Title</th>
-            <th>Slug</th>
-            <th>Category</th>
-            <th>Status</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Date</th>
             <th>Options</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Home</td>
-            <td>/home</td>
-            <td>Fashion</td>
-            <td>Published</td>
-            <td>
-				<ul class="uk-iconnav">
-					<li><a href="#" uk-icon="icon: file-edit"></a></li>
-					<li><a href="#" uk-icon="icon: trash"></a></li>
-				</ul>
-			</td>
-        </tr>
-        <tr>
-            <td>Shopping cart</td>
-            <td>/cart</td>
-            <td>Fashion</td>
-            <td>Published</td>
-            <td>
-				<ul class="uk-iconnav">
-					<li><a href="#" uk-icon="icon: file-edit"></a></li>
-					<li><a href="#" uk-icon="icon: trash"></a></li>
-				</ul>
-			</td>
-        </tr>
-        <tr>
-            <td>Contact us</td>
-            <td>/contact-us</td>
-            <td>Fashion</td>
-            <td>Published</td>
-            <td>
-				<ul class="uk-iconnav">
-					<li><a href="#" uk-icon="icon: file-edit"></a></li>
-					<li><a href="#" uk-icon="icon: trash"></a></li>
-				</ul>
-			</td>
-        </tr>        
-		<tr>
-            <td>Contact us</td>
-            <td>/contact-us</td>
-            <td>Fashion</td>
-            <td>Published</td>
-            <td>
-				<ul class="uk-iconnav">
-					<li><a href="#" uk-icon="icon: file-edit"></a></li>
-					<li><a href="#" uk-icon="icon: trash"></a></li>
-				</ul>
-			</td>
-        </tr>		<tr>
-            <td>Contact us</td>
-            <td>/contact-us</td>
-            <td>Fashion</td>
-            <td>Published</td>
-            <td>
-				<ul class="uk-iconnav">
-					<li><a href="#" uk-icon="icon: file-edit"></a></li>
-					<li><a href="#" uk-icon="icon: trash"></a></li>
-				</ul>
-			</td>
-        </tr>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
 
-<ul class="uk-pagination uk-flex-center uk-margin-medium-top" uk-margin>
-    <li><a href="#"><span uk-pagination-previous></span></a></li>
-    <li class="uk-active"><a href="#">1</a></li>
-    <li class="uk-disabled"><span>...</span></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><span>7</span></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#"><span uk-pagination-next></span></a></li>
-</ul>
+        </tbody>
+    </table>
+
+</div>
+<!--end-->
+
+<!--update course form-->
+<div id="update_form" style="display: none">
+    <h2 class="uk-h3 uk-margin-small-top">Update Article</h2>
+    <ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
+        <li><a href="#articles">Articles</a></li>
+        <li class="uk-disabled"><a href="#">Update Article</a></li>
+    </ul>
+    <form class="uk-form-stacked" id="update_course">
+
+        <div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+            <div>
+                <div class="uk-margins">
+                    <label class="uk-form-label" for="form-stacked-text">Code</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" name="code_edit" id="code_edit" type="text" placeholder="Code...">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-select">Name</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" name="name_edit" id="name_edit" type="text" placeholder="Name...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+            <div>
+                <div class="uk-margins">
+                    <label class="uk-form-label">Duration (in weeks)</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" name="duration_edit" id="duration_edit" type="number"
+                               placeholder="Caption...">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="dates-select">Dates</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="dates-select" multiple="multiple"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input name="edit_course" type="hidden" value="1">
+        <input name="course_id" type="hidden" id="course_id">
+
+        <div class="uk-margin-large-bottom"><br/></div>
+
+        <div class="footer-buttons">
+            <div class="footer-padding">
+                <!--			onclick="alert($('#dates-select').val());"-->
+                <button type="submit" value="submit" name="submit"
+                        class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span
+                        uk-icon="icon: check; "></span> Publish
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--end-->
+
+<!--<ul class="uk-pagination uk-flex-center uk-margin-medium-top" uk-margin>-->
+<!--    <li><a href="#"><span uk-pagination-previous></span></a></li>-->
+<!--    <li class="uk-active"><a href="#">1</a></li>-->
+<!--    <li class="uk-disabled"><span>...</span></li>-->
+<!--    <li><a href="#">5</a></li>-->
+<!--    <li><a href="#">6</a></li>-->
+<!--    <li><span>7</span></li>-->
+<!--    <li><a href="#">8</a></li>-->
+<!--    <li><a href="#"><span uk-pagination-next></span></a></li>-->
+<!--</ul>-->
 
 <script>
-$("#search").keyup(function() {
-    var value = this.value.toLowerCase().trim();
+    $("#search").keyup(function () {
+        var value = this.value.toLowerCase().trim();
 
-    $("table").find("tr").each(function(index) {
-        if (!index) return;
-        var id = $(this).find("td").first().text();
-        id = id.toLowerCase().trim();
-        $(this).toggle(id.indexOf(value) !== -1);
+        $("table").find("tr").each(function (index) {
+            if (!index) return;
+            var id = $(this).find("td").first().text();
+            id = id.toLowerCase().trim();
+            $(this).toggle(id.indexOf(value) !== -1);
+        });
     });
-});
-function selectStatus(obj) {
-    $(obj).siblings().removeClass("uk-active");
-    var text = $(obj).find("a").text();
-    $(obj).addClass("uk-active");
-    $("#selected-articles-status").text(text);
-}
+
+    function selectStatus(obj) {
+        $(obj).siblings().removeClass("uk-active");
+        var text = $(obj).find("a").text();
+        $(obj).addClass("uk-active");
+        $("#selected-articles-status").text(text);
+    }
+
+
+
 </script>
+
+
+<!--<script src="../../../../js/course.js"></script>-->

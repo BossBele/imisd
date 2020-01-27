@@ -3,25 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="../../../css/theme.css"> <!-- Resource style -->
-	<link rel="stylesheet" href="../../../css/nav.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="../../../css/style.css"> <!-- Resource style -->
-	<link rel="stylesheet" href="../../../css/main.css">
-	<script src="../../../js/modernizr.js"></script> <!-- Modernizr -->
+	<link rel="stylesheet" href="../../css/theme.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="../../css/nav.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../../css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="../../css/main.css">
+	<script src="../../js/modernizr.js"></script> <!-- Modernizr -->
   	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- UIkit JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>\
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 
@@ -67,7 +67,7 @@
 					<a href="#">Courses</a>
 						<ul>
 							<li><a href="#courses/new">Add Course</a></li>
-							<li><a href="#courses/edit">Edit/Delete Course</a></li>
+							<li><a id="edit_course" href="#courses/edit">Edit/Delete Course</a></li>
 						</ul>
 				</li>
 			</ul>
@@ -84,8 +84,8 @@
         <!-- /#page-content-wrapper -->
 		</div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
-<script src="../../../js/jquery.menu-aim.js"></script>
-<script src="../../../js/main.js"></script> <!-- Resource jQuery -->
+<script src="../../js/jquery.menu-aim.js"></script>
+<script src="../../js/main.js"></script> <!-- Resource jQuery -->
 
 <script>
 function get_content(tpl, div) {
@@ -97,12 +97,12 @@ $.get(tpl, function(result){
 }, 'html');
 
 }
-crossroads.addRoute('/{section}/{subsection}', function(section, subsection){  
+crossroads.addRoute('/{section}/{subsection}', function(section, subsection){
   get_content('templates/'+section+'/'+subsection+'.html', '#content');
 });
-crossroads.addRoute('/', function(id){  
+crossroads.addRoute('/', function(id){
   get_content('templates/home.html', '#content');
-}); 
+});
 
 //setup hasher
 function parseHash(newHash, oldHash){
@@ -120,7 +120,7 @@ hasher.init(); //start listening for history change
         if ($window.width() < 768) {
             return $html.removeClass('toggled');
         }
-		
+
         $html.addClass('toggled');
     }
 
@@ -128,7 +128,18 @@ hasher.init(); //start listening for history change
         .resize(resize)
         .trigger('resize');
 })(jQuery);
+
+
 </script>
+
+	<script>
+		var course_retrieve_url = '../../php_scripts/course.php';
+		// var course_update_url = '../../php_scripts/course.php';
+
+	</script>
+
+
+	<script src="../../js/course.js"></script>
 
 </body>
 </html>
