@@ -42,7 +42,7 @@ function updateCourse() {
     });
 }
 
-function deleteCourse(course_id) {
+function deleteCourse(course_id, index) {
     var data = {delete_course: "yes", course_id: course_id};
 
     $.ajax({
@@ -53,7 +53,7 @@ function deleteCourse(course_id) {
         success: function (result) {
             if (result[0].message == "success") {
                 alert('Course deleted');
-                location.reload();
+                retrieveCourse();
             } else {
                 alert('Course in use');
                 retrieveCourse();
@@ -112,7 +112,7 @@ function updateCourses(index) {
 function deleteCourses(index) {
     if (all_course != []) {
         var data = all_course[index];
-        deleteCourse(data.id);
+        deleteCourse(data.id, index);
     }
 
 }

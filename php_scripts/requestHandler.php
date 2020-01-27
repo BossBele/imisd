@@ -8,14 +8,14 @@ $course = new Course();
 if ($_POST) {
     switch ($_POST) {
         /*add course*/
-        case $_POST['add_course'] === "1":
+        case isset($_POST['add_course']):
             $code = $_POST['code'];
             $name = $_POST['name'];
             $duration = $_POST['duration'];
             $course->addCourse($code, $name, $duration);
             break;
         /*edit course*/
-        case $_POST['edit_course'] === "1":
+        case isset($_POST['edit_course']):
             $course_id = $_POST['course_id'];
             $code_edit = $_POST['code_edit'];
             $name_edit = $_POST['name_edit'];
@@ -23,7 +23,7 @@ if ($_POST) {
             $course->updateCourse($course_id, $code_edit, $name_edit, $duration_edit);
             break;
         /*delete course*/
-        case $_POST['delete_course'] === "yes":
+        case isset($_POST['delete_course']):
             $course->deleteCourse($_POST['course_id']);
             break;
         default:
@@ -35,7 +35,7 @@ if ($_POST) {
 if ($_GET) {
     switch ($_GET) {
         /*retrieve all courses*/
-        case $_GET['retrieve'] === "yes" && $_GET['edit'] === "1":
+        case isset($_GET['retrieve']):
             $course->retrieveCourse();
             break;
         default:
