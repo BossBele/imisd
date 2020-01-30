@@ -51,8 +51,8 @@
 			                                <li><a href="#programmes/hr">Human Resources Development</a></li>
 			                                <li><a href="#programmes/is">Information Systems Management</a></li>
 			                                <li><a href="#programmes/ev">Environmental & Agricultural</a></li>
-			                                <li><a href="#programmes/finance">Public Finance</a></li>
-			                                <li><a href="#programmes/health">Health Management</a></li>
+			                                <li><a href="#programmes/finance" id="finance_link">Public Finance</a></li>
+			                                <li><a href="#programmes/health" id="health_link">Health Management</a></li>
 			                            </ul>
 			                        </div>
 			                        <div>
@@ -190,7 +190,11 @@ const kebabCase = str => str.match(/[A-Z]{2,}(?=[A-Z][a-z0-9]*|\b)|[A-Z]?[a-z0-9
   .filter(Boolean)
   .map(x => x.toLowerCase())
   .join('-');
+
+	var request_link = 'php_scripts/requestHandler.php';
 </script>
+
+	<script src="js/programme.js"></script>
 
 </body>
 </html>

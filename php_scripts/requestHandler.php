@@ -1,8 +1,10 @@
 <?php
 include 'Course.php';
+include 'Programme.php';
 include 'Connection.php';
 
 $course = new Course();
+$programme = new Programme();
 
 
 if ($_POST) {
@@ -41,6 +43,13 @@ if ($_GET) {
             break;
         case isset($_GET['retrieve_programme']):
             $course->retrieveProgramme();
+            break;
+        case isset($_GET['retrieve_course_by_programme']):
+            $programme_id = $_GET['programme'];
+            $programme->retrieveCourseByProgramme($programme_id);
+            break;
+        case isset($_GET['retrieve_all_course_by_programme']):
+            $programme->retrieveAllCourseByProgramme();
             break;
         default:
             break;
