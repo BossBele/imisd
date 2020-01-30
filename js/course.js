@@ -97,6 +97,32 @@ $('#edit_course').on('click', function () {
     retrieveCourse();
 });
 
+$('#add_course').on('click', function () {
+    retrieveProgramme();
+});
+
+function retrieveProgramme() {
+    var data = {retrieve_programme: "yes", add: "1"};
+    $.ajax({
+        url: course_retrieve_url,
+        type: "get",
+        dataType: "json",
+        data: data,
+        success: function (result) {
+            $("#select_programme option").remove();
+            $('#select_programme').append($('<option>', {
+                value: '',
+                text: 'Select Programme',
+                selected: true,
+                disabled: true
+            }));
+            $.each(result, function (detail, name) {
+                $('#select_programme').append($('<option>', {value: name.id, text: name.name}));
+            });
+        }
+    });
+}
+
 function updateCourses(index) {
     if (all_course != []) {
         document.getElementById('edit_form').style.display = 'none';

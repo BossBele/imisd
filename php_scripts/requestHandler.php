@@ -12,7 +12,8 @@ if ($_POST) {
             $code = $_POST['code'];
             $name = $_POST['name'];
             $duration = $_POST['duration'];
-            $course->addCourse($code, $name, $duration);
+            $programme_id = $_POST['programme_id'];
+            $course->addCourse($code, $name, $duration, $programme_id);
             break;
         /*edit course*/
         case isset($_POST['edit_course']):
@@ -37,6 +38,9 @@ if ($_GET) {
         /*retrieve all courses*/
         case isset($_GET['retrieve']):
             $course->retrieveCourse();
+            break;
+        case isset($_GET['retrieve_programme']):
+            $course->retrieveProgramme();
             break;
         default:
             break;

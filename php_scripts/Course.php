@@ -2,10 +2,10 @@
 
 class Course
 {
-    public function addCourse($code, $name, $duration)
+    public function addCourse($code, $name, $duration, $programme_id)
     {
         $connection = new Connection();
-        $sql = "insert into course (code, name, duration) values ('" . $code . "', '" . $name . "','" . $duration . "')";
+        $sql = "insert into course (code, name, duration,programme_id) values ('" . $code . "', '" . $name . "','" . $duration . "','" . $programme_id . "')";
         $result = mysqli_query($connection->connect(), $sql);
         $response = array();
         if ($result) {
@@ -73,6 +73,25 @@ class Course
                     'code' => $row['code'],
                     'name' => $row['name'],
                     'duration' => $row['duration']
+                ));
+            }
+        }
+
+        echo json_encode($data);
+    }
+
+    public function retrieveProgramme()
+    {
+        $connection = new Connection();
+        $sql = "select * from programme";
+        $result = mysqli_query($connection->connect(), $sql);
+
+        $data = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                array_push($data, array(
+                    'id' => $row['id'],
+                    'name' => $row['name']
                 ));
             }
         }
