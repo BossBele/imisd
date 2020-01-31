@@ -7,12 +7,12 @@
 
             <div class="uk-flex uk-flex-wrap ">
                 <div class="uk-width-1-1">
-                    <h2 class="uk-h3">Manage Articles</h2>
+                    <h2 class="uk-h3">Manage Courses</h2>
                 </div>
                 <div class="uk-width-1-1">
                     <ul class="uk-breadcrumb">
                         <li><a href="#">Home</a></li>
-                        <li class="uk-disabled"><a href="#">Articles</a></li>
+                        <li class="uk-disabled"><a>Courses</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,10 +62,10 @@
         </div>
 
         <div class="uk-width-auto">
-            <a href="#articles/new">
+            <a href="#courses/new">
                 <button class="uk-button uk-button-primary uk-icon uk-align-right"><span uk-icon="icon: plus; "></span>
                     New
-                    article
+                    course
                 </button>
             </a>
         </div>
@@ -94,10 +94,10 @@
 
 <!--update course form-->
 <div id="update_form" style="display: none">
-    <h2 class="uk-h3 uk-margin-small-top">Update Article</h2>
+    <h2 class="uk-h3 uk-margin-small-top">Update Course</h2>
     <ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
-        <li><a href="#articles">Articles</a></li>
-        <li class="uk-disabled"><a href="#">Update Article</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li class="uk-disabled"><a>Update Course</a></li>
     </ul>
     <form class="uk-form-stacked" id="update_course">
 
@@ -126,7 +126,7 @@
                     <label class="uk-form-label">Duration (in weeks)</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" name="duration_edit" id="duration_edit" type="number"
-                               placeholder="Caption...">
+                               placeholder="">
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
         $("#selected-articles-status").text(text);
     }
 
-    var course_update_url = '../../../../php_scripts/requestHandler.php';
+    var course_update_url = '../../php_scripts/requestHandler.php';
 
     $(document).ready(function () {
         retrieveCourse();

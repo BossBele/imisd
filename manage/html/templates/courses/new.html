@@ -1,9 +1,9 @@
 <a href="#" class="uk-button uk-button-link uk-icon tm-back"><span uk-icon="icon: chevron-left; "></span>Back</a>
 
-<h2 class="uk-h3 uk-margin-small-top">New Article</h2>
+<h2 class="uk-h3 uk-margin-small-top">New Course</h2>
 <ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
-    <li><a href="#articles">Articles</a></li>
-    <li class="uk-disabled"><a href="#">New Article</a></li>
+    <li><a>Courses</a></li>
+    <li class="uk-disabled"><a>New Course</a></li>
 </ul>
 <form class="uk-form-stacked" id="new_course">
 
@@ -27,13 +27,19 @@
     </div>
 
     <div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
-        <select id="select_programme" name="programme_id">
-        </select>
+        <div>
+            <div class="uk-margins">
+                <label class="uk-form-label">Programme Category</label>
+                <div class="uk-form-controls">
+                    <select id="select_programme" name="programme_id" class="uk-select"></select>
+                </div>
+            </div>
+        </div>
         <div>
             <div class="uk-margins">
                 <label class="uk-form-label">Duration (in weeks)</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" name="duration" type="number" placeholder="Caption...">
+                    <input class="uk-input" name="duration" type="number" placeholder="">
                 </div>
             </div>
         </div>
@@ -53,7 +59,7 @@
 
     <div class="footer-buttons">
         <div class="footer-padding">
-            <!--			onclick="alert($('#dates-select').val());"-->
+            <!--            onclick="alert($('#dates-select').val());"-->
             <button type="submit" value="submit" name="submit"
                     class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span
                     uk-icon="icon: check; "></span> Publish
@@ -72,7 +78,7 @@
 
     });
 
-    var course_url = '../../../../php_scripts/requestHandler.php';
+    var course_url = '../../php_scripts/requestHandler.php';
 
     $('#new_course').on('submit', function (e) {
         e.preventDefault();
