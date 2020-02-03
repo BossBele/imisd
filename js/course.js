@@ -85,7 +85,7 @@ function retrieveCourse() {
                 row.append('<td>' + obj.code + '</td>');
                 row.append('<td>' + obj.name + '</td>');
                 row.append('<td>' + obj.duration + '</td>');
-                row.append('<td>' + +'</td>');
+                row.append('<td>' + obj.dates +'</td>');
                 row.append('<td><ul class="uk-iconnav"><li><a id="update_btn" onclick="updateCourses(' + index + ')" uk-icon="icon: file-edit"></a></li><li><a onclick="deleteCourses(' + index + ')" uk-icon="icon: trash"></a></li> </ul></td>');
                 $('#table_courses').append(row);
             });
@@ -132,6 +132,9 @@ function updateCourses(index) {
         document.getElementById('code_edit').value = data.code;
         document.getElementById('name_edit').value = data.name;
         document.getElementById('duration_edit').value = data.duration;
+        $('#dates-select').val(data.dates);
+        // document.getElementById('dates-select').value = data.dates;
+
     }
 }
 

@@ -1,3 +1,5 @@
+var all_courses;
+
 function retrieveCourseByProgramme(programme_id) {
     var data = {retrieve_course_by_programme: "yes", programme: programme_id};
     $.ajax({
@@ -52,6 +54,7 @@ function retrieveAllCourseByProgramme() {
         dataType: "json",
         data: data,
         success: function (result) {
+            all_courses = result;
             $.each(result, function (index, obj) {
                 $.each(obj, function (index2, obj2) {
                     $("#programme_" + obj2.programme_id + 'tbody').empty();
@@ -59,8 +62,8 @@ function retrieveAllCourseByProgramme() {
                     row.append('<td>' + obj2.code + '</td>');
                     row.append('<td>' + obj2.name + '</td>');
                     row.append('<td>' + obj2.duration + '</td>');
-                    row.append('<td>' + +'</td>');
-                    row.append('<td>' + +'</td>');
+                    row.append('<td>' + obj2.dates + '</td>');
+                    row.append('<td><a class="application-link" onclick="applyCourse(' + index + ')" href="#application-modal" uk-toggle>Apply</a></td>');
                     $("#programme_" + obj2.programme_id).append(row);
                 });
 
@@ -68,4 +71,62 @@ function retrieveAllCourseByProgramme() {
 
         }
     });
+}
+
+function saveApplicant() {
+    var form = $('#applicant_form').serialize();
+
+    $.ajax({
+        url: course_url,
+        type: "post",
+        dataType: "json",
+        data: form,
+        success: function (result) {
+            console.log(result);
+            if (result[0].message == "success") {
+                alert('Application Submitted');
+                $('#applicant_form').trigger("reset");
+            } else {
+                alert('Please retry');
+                $('#applicant_form').trigger("reset");
+            }
+
+        }
+    });
+
+
+}
+
+function applyCourse(index) {
+    if (all_courses != []) {
+
+        $("#course-options option").remove();
+        $('#course-options').append($('<option>', {
+            value: '',
+            text: 'Select Programme',
+            selected: true,
+            disabled: true
+        }));
+        $.each(all_courses[index], function (detail, name) {
+            $('#course-options').append($('<option>', {value: name.id, text: name.name}));
+        });
+
+    }
+
+
+    if (!index) {
+        $("#course-options option").remove();
+        $('#course-options').append($('<option>', {
+            value: '',
+            text: 'Select Programme',
+            selected: true,
+            disabled: true
+        }));
+        $.each(all_courses, function (index, obj) {
+            $.each(obj, function (index2, obj2) {
+                $('#course-options').append($('<option>', {value: obj2.id, text: obj2.name}));
+            });
+
+        });
+    }
 }

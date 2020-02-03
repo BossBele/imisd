@@ -1,5 +1,5 @@
 <style>
-	
+
 </style>
 <div class="uk-cover-container">
     <canvas width="" height="420"></canvas>
@@ -120,6 +120,13 @@
 		$("#fixed-button").removeAttr("uk-toggle");
 		$("#fixed-button").click(function() {
 			window.location.href = "#programmes";
+			try {
+				applyCourse();
+			}catch (e) {
+				console.log(e);
+			}
 		});
 	});
 </script>
+
+<script src="../js/programme.js"></script>

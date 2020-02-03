@@ -1,13 +1,15 @@
 <?php
 include 'Course.php';
 include 'Programme.php';
+include 'Applicant.php';
 include 'Connection.php';
 
 $course = new Course();
 $programme = new Programme();
-
+$applicant = new Applicant();
 
 if ($_POST) {
+
     switch ($_POST) {
         /*add course*/
         case isset($_POST['add_course']):
@@ -15,7 +17,8 @@ if ($_POST) {
             $name = $_POST['name'];
             $duration = $_POST['duration'];
             $programme_id = $_POST['programme_id'];
-            $course->addCourse($code, $name, $duration, $programme_id);
+            $date = $_POST['date'];
+            $course->addCourse($code, $name, $duration, $programme_id, $date);
             break;
         /*edit course*/
         case isset($_POST['edit_course']):
@@ -28,6 +31,13 @@ if ($_POST) {
         /*delete course*/
         case isset($_POST['delete_course']):
             $course->deleteCourse($_POST['course_id']);
+            break;
+        case isset($_POST['apply']):
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $course_id = $_POST['course_id'];
+            $applicant->addApplicant($name, $phone, $email, $course_id);
             break;
         default:
             break;

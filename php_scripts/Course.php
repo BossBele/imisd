@@ -2,10 +2,10 @@
 
 class Course
 {
-    public function addCourse($code, $name, $duration, $programme_id)
+    public function addCourse($code, $name, $duration, $programme_id, $date)
     {
         $connection = new Connection();
-        $sql = "insert into course (code, name, duration,programme_id) values ('" . $code . "', '" . $name . "','" . $duration . "','" . $programme_id . "')";
+        $sql = "insert into course (code, name, duration,programme_id,date) values ('" . $code . "', '" . $name . "','" . $duration . "','" . $programme_id . "','" . $date . "')";
         $result = mysqli_query($connection->connect(), $sql);
         $response = array();
         if ($result) {
@@ -72,7 +72,8 @@ class Course
                     'id' => $row['id'],
                     'code' => $row['code'],
                     'name' => $row['name'],
-                    'duration' => $row['duration']
+                    'duration' => $row['duration'],
+                    'dates' => $row['date']
                 ));
             }
         }

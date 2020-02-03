@@ -16,7 +16,8 @@ class Programme
                     'id' => $row['id'],
                     'code' => $row['code'],
                     'name' => $row['name'],
-                    'duration' => $row['duration']
+                    'duration' => $row['duration'],
+                    'dates' => $row['date']
                 ));
             }
         }
@@ -38,7 +39,8 @@ class Programme
                     'code' => $row['code'],
                     'name' => $row['name'],
                     'programme_id' => $row['programme_id'],
-                    'duration' => $row['duration']
+                    'duration' => $row['duration'],
+                    'dates' => $row['date']
                 ));
             }
         }
